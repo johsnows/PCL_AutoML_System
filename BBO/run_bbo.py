@@ -4,6 +4,7 @@ import numpy as np
 from time import time
 from BBO.optimizer import random_search as rs
 from BBO.optimizer.random_optimizer import RandomOptimizer
+from BBO.optimizer.scikit_optimizer import ScikitOptimizer
 from BBO.test_problem import rastrigin_function
 
 logger = logging.getLogger(__name__)
@@ -117,4 +118,4 @@ def main(optimizer, test_problem, n_calls, n_suggestions, n_obj=1):
 
 if __name__ == '__main__':
     test_problem=rastrigin_function()
-    main(RandomOptimizer(test_problem.get_api_config()), test_problem, 100, 1, 1)
+    main(ScikitOptimizer(test_problem.get_api_config()), test_problem, 100, 2, 1)
